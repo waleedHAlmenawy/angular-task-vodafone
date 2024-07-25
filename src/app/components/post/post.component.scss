@@ -1,0 +1,93 @@
+@import "../../../sass/variables";
+@import "../../../sass/colors";
+
+.post {
+  background-color: map-get($colors, "color6");
+  padding: 20px;
+  border-radius: 25px;
+
+  margin-top: 20px;
+
+  &__button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 5px;
+    border-radius: 50px;
+    width: 100%;
+    cursor: pointer;
+    background-color: map-get($colors, "color2");
+    color: map-get($colors, "main");
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: map-get($colors, "secondary");
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > p {
+        font-size: 12px;
+        margin-block: 18px;
+      }
+    }
+
+    /* post image styling */
+    img {
+      height: 200px;
+      width: 100%;
+
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+      border: 0.5px solid map-get($colors, "color3");
+    }
+
+    @media (min-width: 980px) {
+      flex-direction: row;
+
+      &__body {
+        width: 50%;
+      }
+
+      img {
+        width: 50%;
+      }
+    }
+  }
+
+  &__comments {
+    margin-top: 20px;
+
+    .line {
+      height: 0.5px;
+      background-color: map-get($colors, "secondary");
+    }
+  }
+}
+
+@media (width >= 980px) {
+  .post__button--mobile {
+    display: block;
+  }
+}
+
+@media (width < 980px) {
+  .post__button--desktop {
+    display: block;
+  }
+}

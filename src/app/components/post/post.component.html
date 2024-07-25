@@ -1,3 +1,39 @@
-<p>post works!</p>
-<app-user-data />
-<app-comment />
+<article class="row center">
+  <div class="post col-10 col-6-md" [@scaleInOut]="showComments ? 'enter' : 'leave'">
+    <section class="post__content">
+      <div class="post__content__body">
+        <app-user-data />
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur iste tempora at quasi. Deleniti, ipsum
+          illo
+          cupiditate excepturi voluptatum corrupti quas iste dolorem reprehenderit quibusdam atque unde alias tenetur
+          perferendis.
+        </p>
+
+        <button class="post__button post__button--mobile" (click)="toggleComments()">Comments</button>
+      </div>
+
+      <img src="../../../assets/images/post-image.jpg" alt="post-img" class="post__img">
+      <button class="post__button post__button--desktop" (click)="toggleComments()">Comments</button>
+    </section>
+
+    <section *ngIf="showComments" class="post__comments" @fadeInOut>
+      <div class="line"></div>
+
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+      <app-comment />
+    </section>
+  </div>
+</article>

@@ -1,0 +1,88 @@
+@import "../../../sass/variables";
+@import "../../../sass/colors";
+
+.nav-bar {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px 10px 10px;
+  margin: 20px 0;
+
+  background-color: map-get($colors, "secondary");
+  color: map-get($colors, "main");
+
+  border-radius: 50px;
+
+  &__user {
+    @media (width >= 720px) {
+      display: none;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+
+    @media (width >= 720px) {
+      display: none;
+    }
+  }
+
+  &__open[aria-expanded="true"] {
+    + .nav-bar__menu {
+      display: block;
+    }
+  }
+
+  &__close {
+    display: block;
+    margin-inline-start: auto;
+
+    margin-bottom: 0.5rem;
+  }
+
+  &__items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    margin-inline: 30px;
+    @media (width < 720px) {
+      flex-direction: column;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &__menu {
+    flex-grow: 1;
+    @media (width < 720px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      background-color: map-get($colors, "color");
+      box-shadow: -0.3px 0.3px 5px black;
+
+      padding: 1rem;
+
+      border-radius: 25px;
+
+      display: none;
+    }
+  }
+}
