@@ -75,12 +75,11 @@
       right: 0;
       top: 0;
 
-      background-color: map-get($colors, "color");
-      box-shadow: -0.3px 0.3px 5px black;
+      background-color: map-get($colors, "secondary");
 
       padding: 1rem;
 
-      border-radius: 25px;
+      border-radius: 30px;
 
       display: none;
     }
