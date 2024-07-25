@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url(https://db.onlinewebfonts.com/c/20222942acebb6ad63faf55842260d87?family=Silka+Regular);
+
+/* variables & functions */
+@import "./functions";
+@import "./variables";
+
+/* base & layout */
+@import "./base";
+@import "./breakpoints";
+@import "./grid";
+
+/* colors */
+@import "./colors";
+
+/* components */
+@import "../app/components/navbar/navbar.component.scss";
+
+/* utilities */
+@import "./utilities";
+
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: "Silka", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
