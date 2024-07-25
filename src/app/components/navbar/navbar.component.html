@@ -1,8 +1,28 @@
-<nav class="row center">
-  <div class="col-10 nav-items-container">
-    <app-nav-item />
-    <app-nav-item />
-    <app-nav-item />
-    <app-nav-item />
-  </div>
-</nav>
+<header class="row center">
+  <nav class="col-10 nav-bar">
+    <img src="../../../assets/svgs/Vodafone_icon.svg" width="30px" title="vodafone-logo" />
+
+    <p class="nav-bar__user">User's Posts</p>
+
+    <span id="nav-label" hidden>Navigation</span>
+
+    <button class="nav-bar__open" [attr.aria-expanded]="isExpanded" aria-labelledby="nav-label" (click)="onOpenMenu()">
+      <img src="../../../assets/svgs/burger-icon.svg" width="30px" title="open-icon" />
+    </button>
+
+    <div class="nav-bar__menu" role="dialog" aria-labelledby="nav-label">
+      <button class="nav-bar__close" aria-label="close" (click)="onCloseMenu()">
+        <img src="../../../assets/svgs/close-icon.svg" width="30px" title="close-icon" />
+      </button>
+
+      <ul class="nav-bar__items">
+        <li><app-nav-item [isActive]="false" /></li>
+        <li><app-nav-item [isActive]="false" /></li>
+        <li><app-nav-item [isActive]="false" /></li>
+        <li><app-nav-item [isActive]="true" /></li>
+        <li><app-nav-item [isActive]="false" /></li>
+      </ul>
+    </div>
+
+  </nav>
+</header>

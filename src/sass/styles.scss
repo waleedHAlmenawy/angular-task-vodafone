@@ -15,7 +15,8 @@
 @import "./colors";
 
 /* components */
-@import "../app/components/navbar/navbar.component.scss";
+@import "./components/navbar.scss";
+@import "./components/nav-item.scss";
 
 /* utilities */
 @import "./utilities";

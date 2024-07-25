@@ -20,13 +20,10 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     UserDataComponent,
     CommentComponent,
     MessageComponent,
-    TruncatePipe
+    TruncatePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

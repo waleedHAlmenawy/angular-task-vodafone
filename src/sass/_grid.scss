@@ -25,7 +25,6 @@
 @each $key, $val in $grid-gaps {
   .gap-#{$key} > * {
     margin: $val;
-    background-color: black;
   }
 
   .gap-#{$key} {
