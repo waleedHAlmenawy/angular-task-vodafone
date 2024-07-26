@@ -10,6 +10,33 @@ $outer-space: #495057ff;
 $onyx: #343a40ff;
 $eerie-black: #212529ff;
 
+/* typography */
+
+$fontSizes: (
+  "xs": 8px,
+  "sm": 12px,
+  "md": 16px,
+  "lg": 20px,
+  "xl": 24px,
+  "xxl": 28px,
+);
+
+$fontWeights: (
+  "thin": 100,
+  "extra-light": 200,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+);
+
+/* base border radius*/
+
+$base-radius-small: 15px;
+$base-radius: 25px;
+$base-radius-large: 35px;
+
 /* breakpoints */
 
 $breakpoints: (

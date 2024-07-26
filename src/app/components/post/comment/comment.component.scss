@@ -6,34 +6,28 @@
   gap: 10px;
   margin-top: 20px;
 
-  &__img {
-    width: 30px;
+  &__img,
+  .skeleton-user__img {
+    min-width: 30px;
     height: 30px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: $base-radius * 2;
   }
 
   &__body {
     padding: 10px;
     background-color: map-get($colors, "color5");
-    border-radius: 25px;
+    border-radius: $base-radius;
 
     p {
-      font-size: 12px;
+      font-size: map-get($fontSizes, "sm");
     }
 
     :first-child {
-      font-weight: 500;
+      font-weight: map-get($fontWeights, "medium");
       margin-bottom: 5px;
     }
   }
-}
-
-.skeleton-user__img {
-  min-width: 30px;
-  height: 30px;
-
-  border-radius: 50px;
 }
 
 .hideImage {

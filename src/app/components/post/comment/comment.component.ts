@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+/*-------------*/
 import { IComment } from '../../../../models/comment.model';
 import { initialComment } from '../../../../constants/comment.initial';
+/*-------------*/
 import { RandomImageService } from '../../../services/random-image.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-comment',

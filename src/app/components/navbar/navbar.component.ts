@@ -1,13 +1,8 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-  ViewEncapsulation,
-} from '@angular/core';
-import { DataService } from '../../services/data.service';
-import { IUser } from '../../../models/user.model';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+/*-------------*/
 import { IData } from '../../../models/data.model';
+/*-------------*/
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -26,24 +21,18 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isUsersLoading = true;
 
-    setTimeout(() => {
-      this.dataService.getUsers().subscribe({
-        next: (data) => {
-          if (data.length) {
-            this.onCompeleteFetching.emit(true);
-          } else {
-            this.onCompeleteFetching.emit(false);
-          }
-        },
-        complete: () => {
-          this.isUsersLoading = false;
-        },
-
-        error: () => {
-          console.log('error');
-        },
-      });
-    }, 5000);
+    this.dataService.getUsers().subscribe({
+      next: (data) => {
+        if (data.length) {
+          this.onCompeleteFetching.emit(true);
+        } else {
+          this.onCompeleteFetching.emit(false);
+        }
+      },
+      complete: () => {
+        this.isUsersLoading = false;
+      },
+    });
   }
 
   onOpenMenu() {

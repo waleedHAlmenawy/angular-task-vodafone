@@ -7,30 +7,24 @@
 
   gap: 10px;
 
-  &__img {
+  &__img,
+  .skeleton-user__img {
     width: 40px;
     height: 40px;
 
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: $base-radius * 2;
   }
 
   &__data {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: map-get($fontSizes, "sm");
+    font-weight: map-get($fontWeights, "medium");
 
     .line {
       height: 0.5px;
       background-color: map-get($colors, "secondary");
     }
   }
-}
-
-.skeleton-user__img {
-  width: 40px;
-  height: 40px;
-
-  border-radius: 50px;
 }
 
 .hideImage {

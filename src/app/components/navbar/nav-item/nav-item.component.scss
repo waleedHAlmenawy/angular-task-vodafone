@@ -2,16 +2,14 @@
 @import "../../../../sass/colors";
 
 .nav-item {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: map-get($fontSizes, "sm");
+  font-weight: map-get($fontWeights, "medium");
 
   padding: 5px 10px;
-  border-radius: 50px;
-
+  border-radius: $base-radius * 2;
   cursor: pointer;
 
   transition: all 0.2s ease-in-out;
-
   &:hover {
     background-color: map-get($colors, "main");
     color: map-get($colors, "secondary");

@@ -6,12 +6,14 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, Input } from '@angular/core';
-import { RandomImageService } from '../../services/random-image.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { IPost } from '../../../models/post.model';
+import { DomSanitizer } from '@angular/platform-browser';
+/*-------------*/
 import { initialPost } from '../../../constants/post.initial';
-import { DataService } from '../../services/data.service';
 import { IData } from '../../../models/data.model';
+import { IPost } from '../../../models/post.model';
+/*-------------*/
+import { DataService } from '../../services/data.service';
+import { RandomImageService } from '../../services/random-image.service';
 
 @Component({
   selector: 'app-post',

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+/*-------------*/
 import { IData } from '../../../../models/data.model';
+/*-------------*/
 import { DataService } from '../../../services/data.service';
 
 @Component({

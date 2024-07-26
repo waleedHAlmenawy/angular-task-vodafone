@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './services/data.service';
-import { IData } from '../models/data.model';
-import { RandomImageService } from './services/random-image.service';
 import { DomSanitizer } from '@angular/platform-browser';
+/*-------------*/
+import { IData } from '../models/data.model';
+/*-------------*/
+import { DataService } from './services/data.service';
+import { RandomImageService } from './services/random-image.service';
 
 @Component({
   selector: 'app-root',
@@ -31,9 +33,11 @@ export class AppComponent implements OnInit {
   userSelected(userId: number) {
     this.isPostsLoading = true;
     this.dataService.setCurrentUser(userId);
-    this.dataService.getUserPosts(userId).subscribe({
-      complete: () => (this.isPostsLoading = false),
-    });
+    setTimeout(() => {
+      this.dataService.getUserPosts(userId).subscribe({
+        complete: () => (this.isPostsLoading = false),
+      });
+    }, 5000);
 
     if (!this.getCurrentUser().user.image) {
       this.fetchUserImage();

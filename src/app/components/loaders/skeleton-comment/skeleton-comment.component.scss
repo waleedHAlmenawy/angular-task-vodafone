@@ -1,28 +1,23 @@
-.skeleton-img {
-  min-width: 30px;
-  height: 30px;
+@import "../../../../sass/variables";
+@import "../../../../sass/utilities";
 
-  border-radius: 50px;
+@for $i from 1 through 2 {
+  .skeleton-paragraph#{$i} {
+    @include skeleton-style(100% - $i * 5%, 10px);
+  }
 }
 
 .comment__body {
   width: 100%;
 }
 
-@for $i from 1 through 2 {
-  .skeleton-paragraph#{$i} {
-    width: 100% - $i * 5%;
-    height: 10px;
-    margin-bottom: 5px;
+.skeleton-img {
+  min-width: 30px;
+  height: 30px;
 
-    border-radius: 5px;
-  }
+  border-radius: $base-radius * 2;
 }
 
 .skeleton-user__name {
-  width: 40%;
-  height: 15px;
-  margin-bottom: 5px;
-
-  border-radius: 5px;
+  @include skeleton-style(40%, 15px);
 }

@@ -11,3 +11,10 @@
     background-color: hsl(200, 20%, 95%);
   }
 }
+
+@mixin skeleton-style($w, $h) {
+  width: $w;
+  height: $h;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

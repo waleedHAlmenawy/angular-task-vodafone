@@ -1,31 +1,33 @@
+@import "../../../sass/variables";
+
 .wrapper {
+  height: 100vh;
+  width: 100%;
+
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 
-  height: 100vh;
-  width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-p {
-  font-size: 28px;
-  font-weight: 600;
-  text-align: center;
+  p {
+    font-size: map-get($fontSizes, "xxl");
+    font-weight: map-get($fontWeights, "medium");
+    text-align: center;
 
-  background: linear-gradient(
-    90deg,
-    #adb5bd 0%,
-    #212529 33.33%,
-    #212529 66.67%,
-    #adb5bd 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(
+      90deg,
+      #adb5bd 0%,
+      #212529 33.33%,
+      #212529 66.67%,
+      #adb5bd 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
 }
