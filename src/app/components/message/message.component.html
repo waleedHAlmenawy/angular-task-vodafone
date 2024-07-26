@@ -3,7 +3,7 @@
 </div>
 
 <div class="wrapper">
-  <div class="row center">
+  <div class="row center" *ngIf="message" @fadeInOut>
     <p class="col-12-lg col-8">{{message}}</p>
   </div>
 </div>

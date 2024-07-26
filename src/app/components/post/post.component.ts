@@ -20,8 +20,8 @@ import { IData } from '../../../models/data.model';
   animations: [
     trigger('fadeInOut', [
       state('void', style({ opacity: 0 })),
-      transition(':enter', [animate(400, style({ opacity: 1 }))]),
-      transition(':leave', [animate(400, style({ opacity: 0 }))]),
+      transition(':enter', [animate(200, style({ opacity: 1 }))]),
+      transition(':leave', [animate(200, style({ opacity: 0 }))]),
     ]),
   ],
 })

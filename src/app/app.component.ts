@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'angular-task-vodafone';
   isPostsLoading = false;
+  message = '';
 
   constructor(
     private dataService: DataService,
@@ -53,5 +54,14 @@ export class AppComponent implements OnInit {
         console.error('Error fetching image:', error);
       },
     });
+  }
+
+  fetchedData(isSucceeded: boolean) {
+    if (isSucceeded) {
+      this.message =
+        'Please select a username from the navbar to view their posts';
+    } else {
+      this.message = 'Sorry unexpected error happened';
+    }
   }
 }

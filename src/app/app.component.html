@@ -4,10 +4,9 @@
     <div class="bg-gradient__right col-3"></div>
   </div>
 
-  <app-navbar (onSelect)="userSelected($event)" />
+  <app-navbar (onSelect)="userSelected($event)" (onCompeleteFetching)="fetchedData($event)" />
 
-  <app-message message="Please select a username from the navbar to view their posts."
-    *ngIf="!getCurrentUser().user.posts.length && !isPostsLoading" />
+  <app-message [message]="message" *ngIf="!getCurrentUser().user.posts.length && !isPostsLoading" />
 
   <div class="posts-wrapper" *ngIf="isPostsLoading">
     <app-skeleton-post />

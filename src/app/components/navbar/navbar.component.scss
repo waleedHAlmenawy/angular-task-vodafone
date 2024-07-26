@@ -2,6 +2,7 @@
 @import "../../../sass/colors";
 
 .nav-bar {
+  min-height: 50px;
   position: fixed;
 
   display: flex;
@@ -19,7 +20,7 @@
   border-radius: 50px;
 
   &__user {
-    @media (width >= 720px) {
+    @media (width >= 980px) {
       display: none;
     }
   }
@@ -31,7 +32,7 @@
 
     cursor: pointer;
 
-    @media (width >= 720px) {
+    @media (width >= 980px) {
       display: none;
     }
   }
@@ -60,7 +61,7 @@
     padding: 0;
 
     margin-inline: 30px;
-    @media (width < 720px) {
+    @media (width < 980px) {
       flex-direction: column;
     }
 
@@ -71,7 +72,7 @@
 
   &__menu {
     flex-grow: 1;
-    @media (width < 720px) {
+    @media (width < 980px) {
       position: absolute;
       right: 0;
       top: 0;
@@ -84,5 +85,28 @@
 
       display: none;
     }
+  }
+}
+
+.nav-skeleton {
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(240, 240, 240, 0.154) 40%,
+    transparent 60%
+  );
+
+  background-size: 200px;
+  background-repeat: no-repeat;
+  animation: shimmer 1s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -50%;
+  }
+
+  100% {
+    background-position: 200%;
   }
 }

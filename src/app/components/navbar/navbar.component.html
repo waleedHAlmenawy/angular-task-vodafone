@@ -1,13 +1,15 @@
 <header class="row center">
-  <nav class="col-10 nav-bar">
+  <nav class="col-10 nav-bar" [ngClass]="{'nav-skeleton' : isUsersLoading}">
     <img src="../../../assets/svgs/vodafone_icon.svg" width="30px" title="vodafone-logo" />
 
-    <p class="nav-bar__user">{{getCurrentUser().user.id ? getCurrentUser().user.username+"'s Posts" : "No Posts To Show"
+    <p class="nav-bar__user" *ngIf="getAllUsers().size">{{getCurrentUser().user.id ? getCurrentUser().user.username+"'s
+      Posts" : "No Posts To Show"
       }}</p>
 
     <span id="nav-label" hidden>Navigation</span>
 
-    <button class="nav-bar__open" [attr.aria-expanded]="isExpanded" aria-labelledby="nav-label" (click)="onOpenMenu()">
+    <button class="nav-bar__open" [attr.aria-expanded]="isExpanded" aria-labelledby="nav-label" (click)="onOpenMenu()"
+      *ngIf="getAllUsers().size">
       <img src="../../../assets/svgs/burger-icon.svg" width="30px" title="open-icon" />
     </button>
 

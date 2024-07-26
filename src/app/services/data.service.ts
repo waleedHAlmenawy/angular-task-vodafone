@@ -1,14 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-import { IUser } from '../../models/user.model';
-import { IPost } from '../../models/post.model';
-import { IData } from '../../models/data.model';
+import { catchError, tap } from 'rxjs/operators';
 import { initialData } from '../../constants/data.initial';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { RandomImageService } from './random-image.service';
 import { IComment } from '../../models/comment.model';
+import { IData } from '../../models/data.model';
+import { IPost } from '../../models/post.model';
+import { IUser } from '../../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -96,7 +94,6 @@ export class DataService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error);
       return of(result as T);
     };
   }

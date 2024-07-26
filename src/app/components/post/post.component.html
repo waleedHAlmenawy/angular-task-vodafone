@@ -1,11 +1,11 @@
 <article class="row center">
-  <div class="post col-10 col-6-md" @fadeInOut>
+  <div class="post col-10 col-6-md">
     <section class="post__content">
       <div class="post__content__body">
         <app-user-data />
 
         <p>
-          {{post.body | truncate: 100}}
+          {{post.body | truncate: 140}}
         </p>
 
         <button class="post__button post__button--mobile" (click)="toggleComments()">Comments</button>

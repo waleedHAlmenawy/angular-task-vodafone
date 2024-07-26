@@ -16,18 +16,34 @@ import { IData } from '../../../models/data.model';
 })
 export class NavbarComponent implements OnInit {
   @Output() onSelect = new EventEmitter<number>();
+  @Output() onCompeleteFetching = new EventEmitter<any>();
 
+  isUsersLoading = false;
   isExpanded = 'false';
-  users: IUser[] = [];
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getUsers().subscribe({
-      next: (data) => {
-        this.users = data;
-      },
-    });
+    this.isUsersLoading = true;
+
+    setTimeout(() => {
+      this.dataService.getUsers().subscribe({
+        next: (data) => {
+          if (data.length) {
+            this.onCompeleteFetching.emit(true);
+          } else {
+            this.onCompeleteFetching.emit(false);
+          }
+        },
+        complete: () => {
+          this.isUsersLoading = false;
+        },
+
+        error: () => {
+          console.log('error');
+        },
+      });
+    }, 5000);
   }
 
   onOpenMenu() {
@@ -40,6 +56,7 @@ export class NavbarComponent implements OnInit {
 
   onSelectUser(userId: number) {
     this.onSelect.emit(userId);
+    this.isExpanded = 'false';
   }
 
   getCurrentUser(): IData {
