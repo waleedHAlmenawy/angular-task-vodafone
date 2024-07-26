@@ -6,8 +6,14 @@
 
   <app-navbar (onSelect)="userSelected($event)" />
 
-  <app-message message="Please select a username from the navbar to view their posts." *ngIf="!getCurrentUser().user.posts.length
-  " />
+  <app-message message="Please select a username from the navbar to view their posts."
+    *ngIf="!getCurrentUser().user.posts.length && !isPostsLoading" />
+
+  <div class="posts-wrapper" *ngIf="isPostsLoading">
+    <app-skeleton-post />
+    <app-skeleton-post />
+    <app-skeleton-post />
+  </div>
 
   <div class="posts-wrapper">
     <app-post *ngFor="let post of getCurrentUser().user.posts" [post]="post" />

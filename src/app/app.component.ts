@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   title = 'angular-task-vodafone';
+  isPostsLoading = false;
 
   constructor(
     private dataService: DataService,
@@ -27,8 +28,11 @@ export class AppComponent implements OnInit {
   }
 
   userSelected(userId: number) {
+    this.isPostsLoading = true;
     this.dataService.setCurrentUser(userId);
-    this.dataService.getUserPosts(userId).subscribe();
+    this.dataService.getUserPosts(userId).subscribe({
+      complete: () => (this.isPostsLoading = false),
+    });
 
     if (!this.getCurrentUser().user.image) {
       this.fetchUserImage();

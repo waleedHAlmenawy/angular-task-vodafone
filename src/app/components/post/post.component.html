@@ -1,17 +1,17 @@
 <article class="row center">
-  <div class="post col-10 col-6-md" [@scaleInOut]="showComments ? 'enter' : 'leave'">
+  <div class="post col-10 col-6-md" @fadeInOut>
     <section class="post__content">
       <div class="post__content__body">
         <app-user-data />
 
         <p>
-          {{post.body | truncate}}
+          {{post.body | truncate: 100}}
         </p>
 
         <button class="post__button post__button--mobile" (click)="toggleComments()">Comments</button>
       </div>
 
-      <img [src]="post.image" alt="post-img" class="post__img">
+      <img [src]="post.image" alt="post-img" class="skeleton post__img">
       <button class="post__button post__button--desktop" (click)="toggleComments()">Comments</button>
     </section>
 
@@ -19,6 +19,14 @@
       <div class="line"></div>
 
       <app-comment *ngFor="let comment of post.comments" [comment]="comment" />
+
+      <div *ngIf="isCommentsLoading">
+        <app-skeleton-comment />
+        <app-skeleton-comment />
+        <app-skeleton-comment />
+        <app-skeleton-comment />
+        <app-skeleton-comment />
+      </div>
     </section>
   </div>
 </article>

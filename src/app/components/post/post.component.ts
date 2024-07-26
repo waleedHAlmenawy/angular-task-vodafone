@@ -38,6 +38,7 @@ export class PostComponent {
   @Input() post: IPost = initialPost;
 
   showComments = false;
+  isCommentsLoading = false;
 
   constructor(
     private dataService: DataService,
@@ -68,9 +69,12 @@ export class PostComponent {
     this.showComments = !this.showComments;
 
     if (!this.post.comments.length) {
+      this.isCommentsLoading = true;
       this.dataService
         .getPostComments(this.getCurrentUser().user.id, this.post.id)
-        .subscribe();
+        .subscribe({
+          complete: () => (this.isCommentsLoading = false),
+        });
     }
   }
 }
