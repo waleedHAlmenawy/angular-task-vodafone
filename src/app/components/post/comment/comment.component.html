@@ -1,8 +1,8 @@
 <div class="comment">
-  <img src="../../../../assets/images/user-image.png" alt="" class="comment__img">
+  <img [src]="comment.image" alt="" class="comment__img">
 
   <div class="comment__body">
-    <p>{{'waleed.almenawy@outlook.com'}}</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore repellendus in possimus pariatur ipsam,</p>
+    <p>{{comment.email}}</p>
+    <p>{{comment.body}}</p>
   </div>
 </div>

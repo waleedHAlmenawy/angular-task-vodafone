@@ -1,8 +1,8 @@
 <div class="user">
-  <img src="../../../../assets/images/user-image.png" alt="user-image" class="user__img">
+  <img [src]="getCurrentUser().user.image" alt="Random User Image" class="user__img">
 
   <div class="user__data">
-    <p>Waleed Almenawy</p>
+    <p>{{getCurrentUser().user.username}}</p>
     <div class="line"></div>
   </div>
 </div>

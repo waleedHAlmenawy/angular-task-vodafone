@@ -11,6 +11,7 @@ import { UserDataComponent } from './components/post/user-data/user-data.compone
 import { CommentComponent } from './components/post/comment/comment.component';
 import { MessageComponent } from './components/message/message.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     MessageComponent,
     TruncatePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

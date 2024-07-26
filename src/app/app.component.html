@@ -4,7 +4,10 @@
     <div class="bg-gradient__right col-3"></div>
   </div>
 
-  <app-navbar />
+  <app-navbar (onSelect)="userSelected($event)" />
 
-  <app-message message="Please select a username from the navbar to view their posts." />
+  <app-message message="Please select a username from the navbar to view their posts." *ngIf="!getCurrentUser().user.posts.length
+  " />
+
+  <app-post *ngFor="let post of getCurrentUser().user.posts" [post]="post" />
 </div>

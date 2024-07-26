@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class NavItemComponent {
   @Input() isActive = false;
+  @Input() username = '';
 }

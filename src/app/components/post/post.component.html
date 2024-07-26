@@ -5,35 +5,20 @@
         <app-user-data />
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur iste tempora at quasi. Deleniti, ipsum
-          illo
-          cupiditate excepturi voluptatum corrupti quas iste dolorem reprehenderit quibusdam atque unde alias tenetur
-          perferendis.
+          {{post.body}}
         </p>
 
         <button class="post__button post__button--mobile" (click)="toggleComments()">Comments</button>
       </div>
 
-      <img src="../../../assets/images/post-image.jpg" alt="post-img" class="post__img">
+      <img [src]="post.image" alt="post-img" class="post__img">
       <button class="post__button post__button--desktop" (click)="toggleComments()">Comments</button>
     </section>
 
     <section *ngIf="showComments" class="post__comments" @fadeInOut>
       <div class="line"></div>
 
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
-      <app-comment />
+      <app-comment *ngFor="let comment of post.comments" [comment]="comment" />
     </section>
   </div>
 </article>
