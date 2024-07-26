@@ -8,9 +8,15 @@ import { DataService } from '../../../services/data.service';
   styleUrl: './user-data.component.scss',
 })
 export class UserDataComponent {
+  imageLoaded = false;
+
   constructor(private dataService: DataService) {}
 
   getCurrentUser(): IData {
     return this.dataService.currentActiveUser;
+  }
+
+  onImageLoad() {
+    this.imageLoaded = true;
   }
 }

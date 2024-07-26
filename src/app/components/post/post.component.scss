@@ -67,6 +67,10 @@
       img {
         width: 50%;
       }
+
+      .skeleton-img {
+        width: 50%;
+      }
     }
   }
 
@@ -90,4 +94,16 @@
   .post__button--desktop {
     display: block;
   }
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 200px;
+
+  border-radius: 15px;
+  border: 0.5px solid transparent;
+}
+
+.hideImage {
+  display: none;
 }

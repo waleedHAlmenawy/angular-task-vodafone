@@ -1,5 +1,9 @@
 <div class="user">
-  <img [src]="getCurrentUser().user.image" alt="User Image" class="user__img">
+  <img [src]="getCurrentUser().user.image" alt="User Image" class="user__img" (load)="onImageLoad()"
+    [ngClass]="{'hideImage': !imageLoaded}">
+
+  <div class="skeleton skeleton-user__img" *ngIf="!imageLoaded"></div>
+
   <div class="user__data">
     <p>{{getCurrentUser().user.username}}</p>
     <div class="line"></div>

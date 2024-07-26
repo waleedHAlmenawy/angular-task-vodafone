@@ -11,7 +11,10 @@
         <button class="post__button post__button--mobile" (click)="toggleComments()">Comments</button>
       </div>
 
-      <img [src]="post.image" alt="post-img" class="skeleton post__img">
+      <div class="skeleton skeleton-img post__img" *ngIf="!imageLoaded"></div>
+
+      <img [src]="post.image" alt="post-img" class="post__img" (load)="onImageLoad()"
+        [ngClass]="{'hideImage': !imageLoaded}">
       <button class="post__button post__button--desktop" (click)="toggleComments()">Comments</button>
     </section>
 

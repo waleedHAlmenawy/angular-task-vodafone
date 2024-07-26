@@ -12,6 +12,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class CommentComponent {
   @Input() comment: IComment = initialComment;
 
+  imageLoaded = false;
+
   constructor(
     private randomImageService: RandomImageService,
     private sanitizer: DomSanitizer
@@ -30,5 +32,9 @@ export class CommentComponent {
         console.error('Error fetching image:', error);
       },
     });
+  }
+
+  onImageLoad() {
+    this.imageLoaded = true;
   }
 }

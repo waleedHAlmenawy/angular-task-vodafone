@@ -6,13 +6,13 @@
 }
 
 .comment__body {
-  width: 90%;
+  width: 85%;
 }
 
 @for $i from 1 through 2 {
   .skeleton-paragraph#{$i} {
     width: 100% - $i * 5%;
-    height: 15px;
+    height: 10px;
     margin-bottom: 5px;
 
     border-radius: 5px;

@@ -20,17 +20,8 @@ import { IData } from '../../../models/data.model';
   animations: [
     trigger('fadeInOut', [
       state('void', style({ opacity: 0 })),
-      transition(':enter', [animate(200, style({ opacity: 1 }))]),
-      transition(':leave', [animate(200, style({ opacity: 0 }))]),
-    ]),
-    trigger('scaleInOut', [
-      state('void', style({ transform: 'scale(0.9)' })),
-      transition(':enter', [
-        animate('300ms ease-out', style({ transform: 'scale(1)' })),
-      ]),
-      transition(':leave', [
-        animate('300ms ease-in', style({ transform: 'scale(0.9)' })),
-      ]),
+      transition(':enter', [animate(400, style({ opacity: 1 }))]),
+      transition(':leave', [animate(400, style({ opacity: 0 }))]),
     ]),
   ],
 })
@@ -39,6 +30,7 @@ export class PostComponent {
 
   showComments = false;
   isCommentsLoading = false;
+  imageLoaded = false;
 
   constructor(
     private dataService: DataService,
@@ -76,5 +68,9 @@ export class PostComponent {
           complete: () => (this.isCommentsLoading = false),
         });
     }
+  }
+
+  onImageLoad() {
+    this.imageLoaded = true;
   }
 }

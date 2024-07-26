@@ -4,31 +4,38 @@
 .comment {
   display: flex;
   gap: 10px;
-
   margin-top: 20px;
 
   &__img {
     width: 30px;
     height: 30px;
-
     object-fit: cover;
-
     border-radius: 50px;
   }
 
   &__body {
+    width: 85%;
     padding: 10px;
     background-color: map-get($colors, "color5");
-
     border-radius: 25px;
+
     p {
       font-size: 12px;
     }
 
     :first-child {
       font-weight: 500;
-
       margin-bottom: 5px;
     }
   }
+}
+
+.skeleton-user__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.hideImage {
+  display: none;
 }

@@ -1,5 +1,7 @@
 <div class="comment">
-  <img [src]="comment.image" alt="" class="comment__img">
+  <img [src]="comment.image" alt="" class="comment__img" (load)="onImageLoad()" [ngClass]="{'hideImage': !imageLoaded}">
+
+  <div class="skeleton skeleton-user__img" *ngIf="!imageLoaded"></div>
 
   <div class="comment__body">
     <p>{{comment.email}}</p>
