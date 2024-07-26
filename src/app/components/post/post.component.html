@@ -30,6 +30,10 @@
         <app-skeleton-comment />
         <app-skeleton-comment />
       </div>
+
+      <p class="no-comments-msg" *ngIf="!isCommentsLoading && !post.comments.length">
+        No comments to show
+      </p>
     </section>
   </div>
 </article>

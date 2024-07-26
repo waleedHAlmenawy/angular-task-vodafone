@@ -14,6 +14,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SkeletonPostComponent } from './components/loaders/skeleton-post/skeleton-post.component';
 import { SkeletonCommentComponent } from './components/loaders/skeleton-comment/skeleton-comment.component';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SkeletonCommentComponent } from './components/loaders/skeleton-comment/
     TruncatePipe,
     SkeletonPostComponent,
     SkeletonCommentComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@
 
   margin-top: 20px;
 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
   &__button {
     display: none;
     background: none;
@@ -85,6 +87,16 @@
       background-color: map-get($colors, "secondary");
     }
   }
+}
+
+.no-comments-msg {
+  margin-top: 20px;
+
+  font-size: map-get($fontSizes, "md");
+  font-weight: map-get($fontWeights, "semi-bold");
+  color: map-get($colors, "color3");
+
+  text-align: center;
 }
 
 @media (width >= 980px) {

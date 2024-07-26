@@ -29,9 +29,7 @@ export class NavbarComponent implements OnInit {
           this.onCompeleteFetching.emit(false);
         }
       },
-      complete: () => {
-        this.isUsersLoading = false;
-      },
+      complete: () => (this.isUsersLoading = false),
     });
   }
 
@@ -45,7 +43,7 @@ export class NavbarComponent implements OnInit {
 
   onSelectUser(userId: number) {
     this.onSelect.emit(userId);
-    this.isExpanded = 'false';
+    this.onCloseMenu();
   }
 
   getCurrentUser(): IData {

@@ -1,5 +1,6 @@
 <header class="row center">
-  <nav class="col-10 nav-bar" [ngClass]="{'nav-skeleton' : isUsersLoading}">
+  <nav class="col-10 nav-bar" [ngClass]="{'nav-skeleton' : isUsersLoading}" appClickOutside
+    (clickOutside)="onCloseMenu()">
     <img src="../../../assets/svgs/vodafone-logo.svg" width="30px" title="vodafone-logo" />
 
     <p class="nav-bar__user" *ngIf="getAllUsers().size">

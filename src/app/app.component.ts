@@ -11,7 +11,7 @@ import { RandomImageService } from './services/random-image.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-task-vodafone';
   isPostsLoading = false;
   message = '';
@@ -22,10 +22,6 @@ export class AppComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
   getCurrentUser(): IData {
     return this.dataService.currentActiveUser;
   }
@@ -33,11 +29,15 @@ export class AppComponent implements OnInit {
   userSelected(userId: number) {
     this.isPostsLoading = true;
     this.dataService.setCurrentUser(userId);
-    setTimeout(() => {
-      this.dataService.getUserPosts(userId).subscribe({
-        complete: () => (this.isPostsLoading = false),
-      });
-    }, 5000);
+    this.dataService.getUserPosts(userId).subscribe({
+      next: (data) => {
+        if (!data.length)
+          this.message =
+            'Sorry no posts to show from ' +
+            this.getCurrentUser().user.username;
+      },
+      complete: () => (this.isPostsLoading = false),
+    });
 
     if (!this.getCurrentUser().user.image) {
       this.fetchUserImage();
