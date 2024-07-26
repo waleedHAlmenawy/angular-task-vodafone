@@ -2,11 +2,13 @@
 @import "../../../sass/colors";
 
 .nav-bar {
-  position: relative;
+  position: fixed;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  z-index: 2;
 
   padding: 10px 20px 10px 10px;
   margin: 20px 0;

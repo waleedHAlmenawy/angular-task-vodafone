@@ -9,5 +9,7 @@
   <app-message message="Please select a username from the navbar to view their posts." *ngIf="!getCurrentUser().user.posts.length
   " />
 
-  <app-post *ngFor="let post of getCurrentUser().user.posts" [post]="post" />
+  <div class="posts-wrapper">
+    <app-post *ngFor="let post of getCurrentUser().user.posts" [post]="post" />
+  </div>
 </div>

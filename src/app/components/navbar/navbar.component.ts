@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { IUser } from '../../../models/user.model';
+import { IData } from '../../../models/data.model';
 
 @Component({
   selector: 'app-navbar',
@@ -40,5 +41,13 @@ export class NavbarComponent implements OnInit {
 
   onSelectUser(userId: number) {
     this.onSelect.emit(userId);
+  }
+
+  getCurrentUser(): IData {
+    return this.dataService.currentActiveUser;
+  }
+
+  getAllUsers() {
+    return this.dataService.cache;
   }
 }

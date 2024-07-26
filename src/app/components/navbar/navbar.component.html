@@ -2,7 +2,8 @@
   <nav class="col-10 nav-bar">
     <img src="../../../assets/svgs/vodafone_icon.svg" width="30px" title="vodafone-logo" />
 
-    <p class="nav-bar__user">User's Posts</p>
+    <p class="nav-bar__user">{{getCurrentUser().user.id ? getCurrentUser().user.username+"'s Posts" : "No Posts To Show"
+      }}</p>
 
     <span id="nav-label" hidden>Navigation</span>
 
@@ -16,9 +17,9 @@
       </button>
 
       <ul class="nav-bar__items">
-        <li *ngFor="let user of users">
-          <a href="#" title="nav item" (click)="onSelectUser(user.id)"><app-nav-item [isActive]="false"
-              [username]="user.username" /></a>
+        <li *ngFor="let data of getAllUsers() | keyvalue">
+          <a href="#" title="nav item" (click)="onSelectUser(data.key)"><app-nav-item [isActive]="data.value.isActive"
+              [username]="data.value.user.username" /></a>
         </li>
       </ul>
     </div>
