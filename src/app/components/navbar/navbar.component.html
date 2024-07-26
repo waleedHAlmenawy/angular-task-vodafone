@@ -20,9 +20,8 @@
 
       <ul class="nav-bar__items">
         <li *ngFor="let data of getAllUsers() | keyvalue">
-          <a href="#" title="nav item" (click)="onSelectUser(data.key)">
-            <app-nav-item [isActive]="data.value.isActive" [username]="data.value.user.username" />
-          </a>
+          <app-nav-item [isActive]="data.value.isActive" [username]="data.value.user.username"
+            (click)="onSelectUser(data.key)" />
         </li>
       </ul>
     </div>
