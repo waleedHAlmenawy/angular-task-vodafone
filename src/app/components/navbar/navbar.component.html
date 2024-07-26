@@ -1,6 +1,6 @@
 <header class="row center">
   <nav class="col-10 nav-bar" [ngClass]="{'nav-skeleton' : isUsersLoading}">
-    <img src="../../../assets/svgs/vodafone_icon.svg" width="30px" title="vodafone-logo" />
+    <img src="../../../assets/svgs/vodafone-logo.svg" width="30px" title="vodafone-logo" />
 
     <p class="nav-bar__user" *ngIf="getAllUsers().size">
       {{getCurrentUser().user.id ? getCurrentUser().user.username+"'s Posts" : "No Posts To Show"}}
