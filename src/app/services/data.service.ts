@@ -64,20 +64,16 @@ export class DataService {
     );
   }
 
-  getPostComments(userId: number, postId: number): Observable<any> {
-    const url = `${this.commentsUrl}?postId=${postId}`;
-    const post = this.cache
-      .get(userId)
-      ?.user.posts.find((post) => post.id === postId);
-
+  getPostComments(userId: number, post: IPost): Observable<any> {
+    const url = `${this.commentsUrl}?postId=${post.id}`;
     const cachedComments = post?.comments;
+
     if (cachedComments?.length) {
       return of(cachedComments);
     }
 
     return this.http.get<IComment[]>(url).pipe(
       tap((data) => {
-        console.log(data);
         if (post) post.comments = data;
       }),
       catchError(this.handleError<any[]>('getPostComments', []))

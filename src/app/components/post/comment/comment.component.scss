@@ -9,7 +9,10 @@
   &__img,
   .skeleton-user__img {
     min-width: 30px;
-    height: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+
     object-fit: cover;
     border-radius: $base-radius * 2;
   }

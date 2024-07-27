@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SkeletonPostComponent } from './components/loaders/skeleton-post/skeleton-post.component';
 import { SkeletonCommentComponent } from './components/loaders/skeleton-comment/skeleton-comment.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

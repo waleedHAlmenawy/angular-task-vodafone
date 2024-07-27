@@ -62,14 +62,14 @@ export class PostComponent {
   toggleComments() {
     this.showComments = !this.showComments;
 
-    if (!this.post.comments.length) {
-      this.isCommentsLoading = true;
-      this.dataService
-        .getPostComments(this.getCurrentUser().user.id, this.post.id)
-        .subscribe({
-          complete: () => (this.isCommentsLoading = false),
-        });
-    }
+    if (this.post.comments.length) return;
+
+    this.isCommentsLoading = true;
+    this.dataService
+      .getPostComments(this.getCurrentUser().user.id, this.post)
+      .subscribe({
+        complete: () => (this.isCommentsLoading = false),
+      });
   }
 
   onImageLoad() {
