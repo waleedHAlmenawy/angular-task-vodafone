@@ -1,6 +1,6 @@
 # Angular Task - Vodafone
 
-![Alt text](./src/assets/svgs/vodafone-logo.svg)
+![Alt text](https://logos-world.net/wp-content/uploads/2020/09/Vodafone-Logo.png)
 
 ## Project Description
 
