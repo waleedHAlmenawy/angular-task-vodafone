@@ -43,7 +43,10 @@ export class AppComponent {
             'Sorry no posts to show from ' +
             this.getCurrentUser().user.username;
       },
-      complete: () => (this.isPostsLoading = false),
+      complete: () => {
+        this.isPostsLoading = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
     });
 
     if (!this.getCurrentUser().user.image) {
