@@ -26,6 +26,13 @@ export class AppComponent {
     return this.dataService.currentActiveUser;
   }
 
+  /**
+   * Fetches the posts of the users who were selected.
+   * The posts are displayed after it completes fetching.
+   *
+   * @param userId the argument is passed from the nav.component
+   */
+
   userSelected(userId: number) {
     this.isPostsLoading = true;
     this.dataService.setCurrentUser(userId);
@@ -60,7 +67,14 @@ export class AppComponent {
     });
   }
 
-  fetchedData(isSucceeded: boolean) {
+  /**
+   * Sends a message to the message.component.
+   * based on the fetching users state.
+   *
+   * @param isSucceeded the argument is passed from the nav.component
+   */
+
+  fetchedUsers(isSucceeded: boolean) {
     if (isSucceeded) {
       this.message =
         'Please select a username from the navbar to view their posts';

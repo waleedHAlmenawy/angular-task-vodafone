@@ -64,7 +64,7 @@ export class DataService {
     );
   }
 
-  getPostComments(userId: number, post: IPost): Observable<any> {
+  getPostComments(post: IPost): Observable<any> {
     const url = `${this.commentsUrl}?postId=${post.id}`;
     const cachedComments = post?.comments;
 

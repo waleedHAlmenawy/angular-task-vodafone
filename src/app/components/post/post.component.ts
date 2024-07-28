@@ -65,11 +65,9 @@ export class PostComponent {
     if (this.post.comments.length) return;
 
     this.isCommentsLoading = true;
-    this.dataService
-      .getPostComments(this.getCurrentUser().user.id, this.post)
-      .subscribe({
-        complete: () => (this.isCommentsLoading = false),
-      });
+    this.dataService.getPostComments(this.post).subscribe({
+      complete: () => (this.isCommentsLoading = false),
+    });
   }
 
   onImageLoad() {

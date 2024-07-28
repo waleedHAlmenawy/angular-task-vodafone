@@ -98,7 +98,7 @@ describe('DataService', () => {
         data.getUserPosts(userId).subscribe({
           complete: () => {
             data
-              .getPostComments(userId, data.cache.get(userId)!.user.posts[0])
+              .getPostComments(data.cache.get(userId)!.user.posts[0])
               .subscribe({
                 next: (comments) => {
                   expect(comments).toBeTruthy();
@@ -148,7 +148,7 @@ describe('DataService', () => {
 
     data.getUsers().subscribe();
     data.getUserPosts(userId).subscribe();
-    data.getPostComments(userId, tempPost).subscribe();
+    data.getPostComments(tempPost).subscribe();
 
     const mockUsersReq = testController.expectOne(url + 'users');
     const mockPostsReq = testController.expectOne(
@@ -168,7 +168,7 @@ describe('DataService', () => {
 
     data.getUsers().subscribe();
     data.getUserPosts(userId).subscribe();
-    data.getPostComments(userId, tempPost).subscribe();
+    data.getPostComments(tempPost).subscribe();
 
     testController.expectNone(url + 'users');
     testController.expectNone(url + 'posts?userId=' + userId);

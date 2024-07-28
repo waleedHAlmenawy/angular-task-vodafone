@@ -23,6 +23,11 @@ export class NavbarComponent implements OnInit {
 
     this.dataService.getUsers().subscribe({
       next: (data) => {
+        /**!SECTION
+         * Emits an event to the parent component (app.component).
+         * with the fetch data state if it was successfully fetched or not.
+         */
+
         if (data.length) {
           this.onCompeleteFetching.emit(true);
         } else {
@@ -40,6 +45,13 @@ export class NavbarComponent implements OnInit {
   onCloseMenu() {
     this.isExpanded = 'false';
   }
+
+  /**
+   * Emits an event to the parent component (app.component).
+   * with the select user id to fetch his posts.
+   *
+   * @param userId
+   */
 
   onSelectUser(userId: number) {
     this.onSelect.emit(userId);

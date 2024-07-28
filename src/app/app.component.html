@@ -4,7 +4,7 @@
     <div class="bg-gradient__right col-3"></div>
   </div>
 
-  <app-navbar (onSelect)="userSelected($event)" (onCompeleteFetching)="fetchedData($event)" />
+  <app-navbar (onSelect)="userSelected($event)" (onCompeleteFetching)="fetchedUsers($event)" />
 
   <app-message [message]="message" *ngIf="!getCurrentUser().user.posts.length && !isPostsLoading" />
 
